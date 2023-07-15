@@ -2,11 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { CONTACTS } from '../utils/constants';
 
 const initialState = {
-  contacts: {
-    items: [],
-    isLoading: false,
-    error: null,
-  },
+  contacts: [],
   filter: '',
 };
 
