@@ -1,3 +1,4 @@
-export const LS_KEY = 'contacts';
-
-export const CONTACTS = 'CONTACTS';
+export const CONTACTS = 'contacts';
+export const IS_LOADING = 'isLoading';
+export const ERROR = 'error';
+export const FILTER = 'filter';

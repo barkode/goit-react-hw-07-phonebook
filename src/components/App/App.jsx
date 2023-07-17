@@ -1,8 +1,7 @@
-import PropType from 'prop-types';
 import React from 'react';
-import ContactForm from '../ContactForm/ContactForm';
-import Filter from '../Filter/Filter';
-import ContactList from '../ContactList/ContactList';
+import ContactForm from 'components/ContactForm/ContactForm';
+import Filter from 'components/Filter/Filter';
+import ContactList from 'components/ContactList/ContactList';
 import { Container } from './App.styled';
 
 export function App() {
@@ -18,13 +17,3 @@ export function App() {
 }
 
 export default App;
-
-App.propTypes = {
-  contacts: PropType.arrayOf(
-    PropType.shape({
-      id: PropType.string,
-      name: PropType.string,
-      number: PropType.string,
-    })
-  ),
-};
