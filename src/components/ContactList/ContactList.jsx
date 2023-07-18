@@ -2,14 +2,15 @@ import PropType from 'prop-types';
 import React from 'react';
 import { Button, List, ListItem } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts, getFilter } from 'redux/selectors';
-import { deleteContact } from 'redux/contactsSlice';
+import { getContacts, getIsLoading, getStatusFilter } from 'redux/selectors';
+import { deleteContact } from 'redux/operations';
+import { CircularProgress } from '@mui/material';
 
 function ContactList() {
   const contacts = useSelector(getContacts);
+  const filter = useSelector(getStatusFilter);
+  const isLoading = useSelector(getIsLoading);
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
-
   const handleDeleteContact = id => dispatch(deleteContact(id));
 
   const filterContact = contacts.filter(contact =>
@@ -26,9 +27,8 @@ function ContactList() {
               type="button"
               title="Delete contact"
               onClick={() => handleDeleteContact(id)}
-            >
-              Delete
-            </Button>
+            ></Button>
+            {isLoading && <CircularProgress />}
           </ListItem>
         );
       })}

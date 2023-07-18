@@ -1,12 +1,10 @@
 import PropType from 'prop-types';
 import React from 'react';
 import { FieldName, Input, Label } from './Filter.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'redux/contactsSlice';
-import { getFilter } from 'redux/selectors';
+import { useDispatch } from 'react-redux';
+import { setFilter } from 'redux/filterSlice';
 
 const Filter = () => {
-  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
   const handleChangeFilter = e => {
@@ -22,7 +20,6 @@ const Filter = () => {
         name="filter"
         title="To find abonent enter they name"
         placeholder="Searching ....."
-        value={filter}
         onChange={handleChangeFilter}
       />
     </Label>
